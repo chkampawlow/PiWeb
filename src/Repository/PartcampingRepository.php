@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Participatecamp;
+use App\Entity\Partcamping;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Participatecamp>
+ * @extends ServiceEntityRepository<Partcamping>
  *
- * @method Participatecamp|null find($id, $lockMode = null, $lockVersion = null)
- * @method Participatecamp|null findOneBy(array $criteria, array $orderBy = null)
- * @method Participatecamp[]    findAll()
- * @method Participatecamp[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Partcamping|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Partcamping|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Partcamping[]    findAll()
+ * @method Partcamping[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ParticipatecampRepository extends ServiceEntityRepository
+class PartcampingRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Participatecamp::class);
+        parent::__construct($registry, Partcamping::class);
     }
 
-    public function save(Participatecamp $entity, bool $flush = false): void
+    public function save(Partcamping $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ParticipatecampRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Participatecamp $entity, bool $flush = false): void
+    public function remove(Partcamping $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ParticipatecampRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Participatecamp[] Returns an array of Participatecamp objects
+//     * @return Partcamping[] Returns an array of Partcamping objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ParticipatecampRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Participatecamp
+//    public function findOneBySomeField($value): ?Partcamping
 //    {
 //        return $this->createQueryBuilder('p')
 //            ->andWhere('p.exampleField = :val')

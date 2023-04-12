@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Groupe{% endblock %}
+
+{% block body %}
+    <h1>Groupe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ groupe.id }}</td>
+            </tr>
+            <tr>
+                <th>Namegroupe</th>
+                <td>{{ groupe.Namegroupe }}</td>
+            </tr>
+            <tr>
+                <th>Desgroupe</th>
+                <td>{{ groupe.Desgroupe }}</td>
+            </tr>
+            <tr>
+                <th>Typegroupe</th>
+                <td>{{ groupe.Typegroupe }}</td>
+            </tr>
+            <tr>
+                <th>Membremax</th>
+                <td>{{ groupe.Membremax }}</td>
+            </tr>
+            <tr>
+                <th>Iduser</th>
+                <td>{{ groupe.Iduser }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

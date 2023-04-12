@@ -34,12 +34,9 @@ class Camping
     #[ORM\ManyToOne]
     private ?Groupe $Idgroupe = null;
 
-
-    public function __construct()
-    {
-        $this->participatecamps = new ArrayCollection();
+    public function __toString(){
+        return $this->Namecamp; // Remplacer champ par une propriété "string" de l'entité
     }
-
 
     public function getId(): ?int
     {
@@ -114,33 +111,6 @@ class Camping
     public function setIdgroupe(?Groupe $Idgroupe): self
     {
         $this->Idgroupe = $Idgroupe;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Participatecamp>
-     */
-    public function getParticipatecamps(): Collection
-    {
-        return $this->participatecamps;
-    }
-
-    public function addParticipatecamp(Participatecamp $participatecamp): self
-    {
-        if (!$this->participatecamps->contains($participatecamp)) {
-            $this->participatecamps->add($participatecamp);
-            $participatecamp->addIdcamp($this);
-        }
-
-        return $this;
-    }
-
-    public function removeParticipatecamp(Participatecamp $participatecamp): self
-    {
-        if ($this->participatecamps->removeElement($participatecamp)) {
-            $participatecamp->removeIdcamp($this);
-        }
 
         return $this;
     }
